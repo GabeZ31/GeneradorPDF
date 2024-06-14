@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Venta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="file.png" alt="Logo de la empresa" class="logo">
+            <div class="header-text">
+                <p>10 y 11 BERRIOZABAL NUM 720<br>
+                Cel 834-1450084<br>
+                Cd. Victoria Tamaulipas</p>
+            </div>
+        </div>
+        <div id="editable-content">
+            <table>
+                <tr>
+                    <th>NOMBRE:</th>
+                    <td><p id="nombre"></p></td>
+                </tr>
+                <tr>
+                    <th>TEL:</th>
+                    <td><p id="tel"></p></td>
+                </tr>
+                <tr>
+                    <th>FECHA:</th>
+                    <td><p id="fecha"></p></td>
+                    <th>HORA:</th>
+                    <td><p id="hora"></p></td>
+                </tr>
+                <tr>
+                    <th>LUGAR:</th>
+                    <td colspan="3"><p id="lugar"></p></td>
+                </tr>
+                <tr>
+                    <th>DESCRIPCION:</th>
+                </tr>
+                <tr>
+                    <td colspan="4"><h6 id="decoracion" rows="12"></h6></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                  <th rowspan="3">OBSERVACIONES:</th>
+                  <td rowspan="3"><h6 id="observaciones" rows="1"></h6></td>
+                  <th>TOTAL$</th>
+                  <td><p id="total"></p></td>
+                </tr>
+                <tr>
+                  <th>ANTICIPO$</th>
+                  <td><p id="anticipo"></p></td>
+                </tr>
+                <tr>
+                  <th>RESTA$</th>
+                  <td><p id="resta"></p></td>
+                </tr>
+              </table>
+              
+            <p>ABONOS:</p>
+            <table id="contract-fields">
+                <tr>
+                    <th>FECHA</th>
+                    <th>CANTIDAD</th>
+                    <th>RESTA</th>
+                   
+                </tr>
+                <tr>
+                    <div id="contract-fields">
+                        <td><p id="abono-fecha-1"></p></td>
+                    <td><p id="abono-cantidad-1"></p></td>
+                    <td><p id="abono-resta-1"></p></td>
+                   
+                    </div>
+                  
+                </tr>
+                <tr>
+                    <div id="contract-fields">
+                      <td><p id="abono-fecha-3"></p></td>
+                    <td><p id="abono-cantidad-3"></p></td>
+                    <td><p id="abono-resta-3"></p></td>
+                    
+                    </div>
+                   
+                </tr>
+            </table>
+        </div>
+        <button id="edit-button" class="button" onclick="openModal()">Editar Campos</button>
+        <button id="print-button" class="button" onclick="printPage()">Imprimir Página</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Editar Campos</h2>
+            <label for="modal-nombre">Nombre:</label>
+            <input type="text" id="modal-nombre">
+
+            <label for="modal-tel">Tel:</label>
+            <input type="text" id="modal-tel">
+
+            <label for="modal-fecha">Fecha:</label>
+            <input type="text" id="modal-fecha">
+
+            <label for="modal-hora">Hora:</label>
+            <input type="text" id="modal-hora">
+
+            <label for="modal-lugar">Lugar:</label>
+            <input type="text" id="modal-lugar">
+
+            <label for="modal-decoracion">Decoración Elegida:</label>
+            <textarea id="modal-decoracion" rows="6"></textarea>
+
+            <label for="modal-observaciones">Observaciones:</label>
+            <textarea id="modal-observaciones" rows="3"></textarea>
+
+            <label for="modal-total">Total:</label>
+            <input type="text" id="modal-total">
+
+            <label for="modal-anticipo">Anticipo:</label>
+            <input type="text" id="modal-anticipo">
+
+            <label for="modal-resta">Resta:</label>
+            <input type="text" id="modal-resta">
+
+            <label for="modal-abono-fecha-1">Abono Fecha 1:</label>
+            <input type="text" id="modal-abono-fecha-1">
+
+            <label for="modal-abono-cantidad-1">Abono Cantidad 1:</label>
+            <input type="text" id="modal-abono-cantidad-1">
+
+            <label for="modal-abono-resta-1">Abono Resta 1:</label>
+            <input type="text" id="modal-abono-resta-1">
+
+
+            <label for="modal-abono-fecha-3">Abono Fecha 2:</label>
+            <input type="text" id="modal-abono-fecha-3">
+
+            <label for="modal-abono-cantidad-3">Abono Cantidad 2:</label>
+            <input type="text" id="modal-abono-cantidad-3">
+
+            <label for="modal-abono-resta-3">Abono Resta 2:</label>
+            <input type="text" id="modal-abono-resta-3">
+
+            <button class="button" onclick="updateContent()">Guardar Cambios</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
